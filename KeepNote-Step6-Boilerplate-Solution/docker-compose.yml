@@ -1,0 +1,45 @@
+--- 
+services: 
+  mongo-service: 
+    command: "mongod --port 27018"
+    image: mongo
+    network_mode: host
+    ports: 
+     - 27017:27018
+    restart: always
+    volumes: 
+      - /data/dump:/data/db
+  note-service: 
+    build: 
+      context: NoteService/
+    depends_on: 
+      - mongo-service
+    image: noteservice
+    network_mode: host
+    ports: 
+      - "8083:8083"
+    restart: always
+  user-auth: 
+    build: 
+      context: UserAuthentication-Service/
+    depends_on: 
+      - user-mysql
+    image: userauthenticationservice
+    network_mode: host
+    ports: 
+      - "8084:8084"
+    restart: always
+  user-mysql: 
+    environment: 
+      MYSQL_DATABASE: sys
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: root
+    image: mysql
+    network_mode: host
+    ports: 
+     - 3306:3306
+    restart: always
+    volumes: 
+      - /data/dump:/data/mysqldb
+version: "1"

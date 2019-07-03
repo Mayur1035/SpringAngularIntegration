@@ -1,0 +1,53 @@
+<div class="note-panel-header">
+    <mat-accordion class="example-headers-align">
+        <form #f="ngForm" id="note-taker-form">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Save Notes
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <mat-icon>description</mat-icon>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="note-panel-form">
+                    <mat-form-field>
+                        <input [(ngModel)]="note.title" name="title" matInput type="text" placeholder="Title" ngModel #title="ngModel" required>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <textarea [(ngModel)]="note.text" name="text" matInput placeholder="Text" ngModel #text="ngModel" required></textarea>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select [(ngModel)]="note.state" name="status" placeholder="State">
+                            <mat-option value="not-started">Not Started</mat-option>
+                            <mat-option value="started">Started</mat-option>
+                            <mat-option value="completed">Completed</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select placeholder="Category Name" [(ngModel)]="note.category.categoryId" name="categoryName">
+                            <mat-option *ngFor="let category of categories" [value]="category.categoryId">
+                                {{category.categoryName}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select placeholder="Reminder Name" [(ngModel)]="note.reminders.reminderId" name="reminderName">
+                            <mat-option *ngFor="let reminder of reminders" [value]="reminder.reminderId">
+                                {{reminder.reminderName}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <div>
+                        <label for="svc-error-message" class="error-message">{{errorMsg}}</label>
+                    </div>
+                    <mat-action-row>
+                        <mat-card-actions>
+                            <button *ngIf="f.valid" mat-button (click)="takeNotes()">Submit</button>
+                        </mat-card-actions>
+                    </mat-action-row>
+                </div>
+            </mat-expansion-panel>
+        </form>
+    </mat-accordion>
+</div>

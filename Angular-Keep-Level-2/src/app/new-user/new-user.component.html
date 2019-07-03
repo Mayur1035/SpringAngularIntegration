@@ -1,0 +1,47 @@
+<div class="new-user-form-container">
+    <mat-card>
+        <div class="new-user-form-header">
+            <mat-card-header>
+                <mat-card-title>{{cardTitle}}</mat-card-title>
+                <mat-card-subtitle>{{cardSubTitle}}</mat-card-subtitle>
+            </mat-card-header>
+        </div>
+        <div [hidden]='this.isUserRegistered' class='new-user-form-content'>
+            <mat-card-content>
+                <form #registerForm='ngForm' id="register-form">
+                    <div class='new-user-form-panel'>
+                        <mat-form-field>
+                            <input matInput [(ngModel)]='user.firstName' type='text' name='firstName' id='firstName' ngModel placeholder='Enter First Name'
+                                required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput [(ngModel)]='user.lastName' type='text' name='lastName' id='lastName' ngModel placeholder='Enter Last Name'
+                                required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput [(ngModel)]='user.userId' type='text' name='userId' id='userId' ngModel placeholder='Enter UserId' required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput [(ngModel)]='user.userPassword' type='password' name='userPassword' id='userPassword' ngModel placeholder='Enter Password'
+                                required>
+                        </mat-form-field>
+                        <label class='error-message' *ngIf='errorMessage'>{{errorMessage}}</label>
+                        <div class='new-user-form-button'>
+                            <mat-card-actions>
+                                    <button mat-button (click)='registerUser()' type='submit' class='signup-link'>Register Me</button>
+                                <button mat-button class='login-link' (click)='switchToLogin()'>Already Registered</button>
+                            </mat-card-actions>
+                        </div>
+                    </div>
+                </form>
+            </mat-card-content>
+        </div>
+        <div [hidden]='!this.isUserRegistered' class='register-user-form-content'>
+            <div class='new-user-form-panel'>
+                <mat-card-actions>
+                    <button mat-button class='login-link' (click)='switchToLogin()'>Go To Login</button>
+                </mat-card-actions>
+            </div>
+        </div>
+    </mat-card>
+</div>

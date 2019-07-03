@@ -1,0 +1,40 @@
+.login-c-form-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 50vw;
+    margin: auto;
+}
+.login-panel-form{
+    display: flex;
+    flex-direction: column;
+    color: darkblue;
+    width: 35vw;
+}
+.login-form-button{
+    display: flex;
+    justify-content: space-between;
+}
+.error-message{
+    color: red;
+    font: 0.75rem sans-serif;
+    padding-bottom: 1rem;
+}
+.mat-card-title{
+    font-size: 1rem;
+    font-weight: bold;
+    color: darkblue;
+}
+.signin-link{
+    font-weight: bold;
+}
+.new-user-link{
+    font-weight: bold;
+    font-family: 'Trebuchet MS';
+    color: rgb(0, 139, 30);
+}
+.login-form-header {
+    display: flex;
+    justify-content: center;
+}

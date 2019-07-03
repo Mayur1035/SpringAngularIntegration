@@ -1,0 +1,37 @@
+<div class="keep-c-list-container">
+    <mat-tab-group>
+        <mat-tab label="Not Started">
+            <app-note-grid [notes]="notStartedNotes"></app-note-grid>
+        </mat-tab>
+        <mat-tab label="Started">
+            <app-note-grid [notes]="startedNotes"></app-note-grid>
+        </mat-tab>
+        <mat-tab label="Completed">
+            <app-note-grid [notes]="completedNotes"></app-note-grid>
+        </mat-tab>
+        <mat-tab label="Category">
+            <div class="category-tab">
+                <mat-form-field>
+                    <mat-select placeholder="Category Name" (selectionChange)="filterCategory($event.value)">
+                        <mat-option *ngFor="let category of categories" [value]="category.categoryId">
+                            {{ category.categoryName }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <app-note-grid [notes]="categorizedNotes"></app-note-grid>
+        </mat-tab>
+        <mat-tab label="Reminders">
+            <div class="category-tab">
+                <mat-form-field>
+                    <mat-select placeholder="Reminder Name" (selectionChange)="filterReminder($event.value)">
+                        <mat-option *ngFor="let reminder of reminders" [value]="reminder.reminderId">
+                            {{ reminder.reminderName }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <app-note-grid [notes]="remindedNotes"></app-note-grid>
+        </mat-tab>
+    </mat-tab-group>
+</div>

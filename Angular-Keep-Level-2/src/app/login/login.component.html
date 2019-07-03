@@ -1,0 +1,26 @@
+<div class='login-c-form-wrapper'>
+  <mat-card class="card-class">
+    <div class='login-form-header'>
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+    </div>
+    <form #loginForm='ngForm' (ngSubmit)='loginSubmit(loginForm)' id="login-form">
+      <div class='login-panel-form'>
+        <mat-form-field>
+          <input matInput [(ngModel)]='user.userId' type='text' name='userId' id='userId' ngModel placeholder='Enter UserId' required>
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput [(ngModel)]='user.userPassword' type='password' name='userPassword' id='userPassword' ngModel placeholder='Enter Password' required>
+        </mat-form-field>
+        <label class='error-message' *ngIf='errorMessage'>{{errorMessage}}</label>
+        <div class='login-form-button'>
+          <mat-card-actions>
+            <button mat-button type='submit' class='signin-link'>Proceed To Keep</button>
+            <button mat-button class='new-user-link' (click)='switchToNewUserForm()'>Click To Register</button>
+          </mat-card-actions>
+        </div>
+      </div>
+    </form>
+  </mat-card>
+</div>

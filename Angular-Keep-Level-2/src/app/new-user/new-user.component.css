@@ -1,0 +1,39 @@
+.new-user-form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    margin: auto;
+}
+.new-user-form-header{
+    display: flex;
+    justify-content: flex-start;
+    color: darkblue;
+}
+.mat-card-title{
+    font-size: 1rem;
+    font-weight: bold;
+}
+.new-user-form-panel{
+    display: flex;
+    flex-direction: column;
+    color: darkblue;
+    width: 50vw;
+}
+.new-user-form-button{
+    display: flex;
+    justify-content: space-between;
+}
+.signup-link{
+    font-weight: bold;
+}
+.login-link{
+    font-weight: bold;
+    font-family: 'Trebuchet MS';
+    color: rgb(0, 139, 30);
+}
+.error-message{
+    color: red;
+    font: 0.75rem sans-serif;
+    padding-bottom: 1rem;
+}

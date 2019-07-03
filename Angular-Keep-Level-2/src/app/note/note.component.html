@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-title>{{note.title}}</mat-card-title>
+  <mat-card-content>{{note.text}}</mat-card-content>
+  <div class="icon-tab">
+    <div>
+      <mat-icon (click)="openEditNoteView()">description</mat-icon>
+      <mat-icon (click)="openSnackBar(category.categoryName, category.categoryDescription)">filter</mat-icon>
+      <mat-icon matTooltip={{reminder.reminderName}}>add_alert</mat-icon>
+    </div>
+    <div>
+      <mat-icon *ngIf="note.updatedOn" matTooltip="{{note.updatedOn}} : last update">query_builder</mat-icon>
+    </div>
+  </div>
+</mat-card>

@@ -1,0 +1,10 @@
+
+.mat-card{
+    color: darkblue;
+    background-color:rgb(230, 238, 240);
+    width: 35vw;
+}
+.icon-tab{
+    display: flex;
+    justify-content: space-between;
+}

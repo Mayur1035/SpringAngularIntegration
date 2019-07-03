@@ -1,0 +1,41 @@
+<link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'>
+<mat-toolbar color='primary'>
+    <mat-toolbar-row>
+        <div class='keep-span' (click)='switchToHome()'>Keep Application</div>
+        <div class="info-span" *ngIf='isLoggedIn'>
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item [hidden]='!isLoggedIn'>
+                    <mat-icon>account_box</mat-icon>
+                    <span>{{greetUser}}</span>
+                </button>
+                <button mat-menu-item (click)='switchToNoteView()'>
+                    <mat-icon>description</mat-icon>
+                    <span>Note Section</span>
+                </button>
+                <button mat-menu-item (click)='switchToCategoryView()'>
+                    <mat-icon>filter</mat-icon>
+                    <span>Category Section</span>
+                </button>
+                <button mat-menu-item (click)='switchToReminderView()'>
+                    <mat-icon>add_alert</mat-icon>
+                    <span>Reminder Section</span>
+                </button>
+                <button mat-menu-item [hidden]='!this.isNoteView' (click)='switchToListView()'> 
+                    <mat-icon class='switchToListView'>view_list</mat-icon>
+                    <span>List View</span>
+                </button>
+                <button mat-menu-item [hidden]='this.isNoteView' (click)='switchToNoteView()'>
+                    <mat-icon class='switchToNoteView'>view_module</mat-icon>
+                    <span>Note View</span>
+                </button>
+                <button mat-menu-item [hidden]='!isLoggedIn' (click)='logout()'>
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Log Out</span>
+                </button>
+            </mat-menu>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

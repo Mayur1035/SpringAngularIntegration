@@ -1,0 +1,16 @@
+.note-panel-header{
+    width: 50vw;
+    margin: auto;
+    padding-bottom: 2em;
+}
+.note-panel-form{
+    display: flex;
+    flex-direction: column;
+}
+.note-form-button{
+    display: flex;
+    justify-content: flex-end;
+}
+.error-message{
+    color: red;
+}

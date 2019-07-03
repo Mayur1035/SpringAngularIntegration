@@ -1,0 +1,33 @@
+.iconStyle{
+  background-color: transparent;
+  border-style: none;
+  color:  whitesmoke;
+}
+.switchToListView{
+	margin-left: 0%;
+}
+.switchToNoteView{
+	margin-left: 0%;
+}
+.iconStyle_exit{
+  background-color: transparent;
+  border-style: none;
+  color: rgb(159, 230, 248);
+}
+.mat-toolbar-row{
+  display: flex;
+  justify-content: space-between;
+}
+.info-span{
+  display: flex;
+  justify-content: flex-end;
+}
+.user-span{
+  font-family: 'Trebuchet MS';
+  font-size: 1rem;
+}
+.mat-menu{
+  color: darkblue;
+  font-family: 'Trebuchet MS';
+  font-size: 1rem;
+}

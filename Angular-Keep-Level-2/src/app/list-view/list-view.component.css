@@ -1,0 +1,16 @@
+.keep-c-list-container {
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+}
+.mat-tab{
+    font-family: 'Trebuchet MS';
+    font-size: 1rem;
+    font-weight: bold;
+}
+.category-tab{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 2%;
+}
+

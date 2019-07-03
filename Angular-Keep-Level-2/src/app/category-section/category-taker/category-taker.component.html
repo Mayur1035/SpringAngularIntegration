@@ -1,0 +1,29 @@
+<div class="note-panel-header">
+      <form #f="ngForm" id="note-taker-form">
+          <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                  <mat-panel-title>
+                      Category
+                  </mat-panel-title>
+                  <mat-panel-description>
+                      <mat-icon>filter</mat-icon>
+                  </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="note-panel-form">
+                  <mat-form-field>
+                      <input [(ngModel)]="category.categoryName" name="categoryName" matInput type="text" placeholder="Category Name" ngModel
+                          #title="ngModel">
+                  </mat-form-field>
+                  <mat-form-field>
+                      <textarea [(ngModel)]="category.categoryDescription" name="categoryDescription" matInput placeholder="Category Description"
+                          ngModel #text="ngModel"></textarea>
+                  </mat-form-field>
+                  <mat-action-row>
+                      <mat-card-actions>
+                          <button mat-button color="primary" (click)="addCategory()">Add Category</button>
+                      </mat-card-actions>
+                  </mat-action-row>
+              </div>
+          </mat-expansion-panel>
+      </form>
+</div>
